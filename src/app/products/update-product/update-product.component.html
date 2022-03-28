@@ -1,0 +1,77 @@
+<h2 class="bg-light text-center mb-4 pb-2" >Update Product</h2>
+
+<!-- Template Driven Form -->
+<form class="row g-3" (ngSubmit)="updateProduct(updateProductForm)" #updateProductForm="ngForm">
+    <div class="col-md-4">
+      <label for="product-name" class="form-label">Product Name</label>
+      <input type="text" class="form-control" id="product-name" name="product_name" [(ngModel)]="productDetails.name" ngModel>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+    </div>
+    <div class="col-md-4">
+      <label for="product-id" class="form-label">Category Id</label>
+      <input type="text" class="form-control" id="product-id" name="product_id" [(ngModel)]="productDetails.categoryOId" ngModel>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+    </div>
+    <div class="col-md-4">
+      <label for="product-description" class="form-label">Description</label>
+      <div class="input-group has-validation">
+        <textarea type="text" class="form-control" name="product_description" placeholder="Enter Product Description" id="" cols="30" rows="1" [(ngModel)]="productDetails.descriptions" ngModel></textarea>
+        <div id="product-descriptionFeedback" class="invalid-feedback">
+          Please choose a username.
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <label for="rating" class="form-label">Rating</label>
+      <select class="form-select" id="rating" name="product_rating" [(ngModel)]="productDetails.rating" ngModel>
+        <option selected disabled value="">Choose...</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+      <div class="invalid-feedback">
+        Please select a valid state.
+      </div>
+    </div>
+    <div class="col-md-4">
+      <label for="availability" class="form-label">Is Available</label>
+      <select class="form-select" id="availability" name="availability" [(ngModel)]="productDetails.isAvailable" ngModel>
+        <option selected disabled value="">Choose...</option>
+        <option value="1">Yes</option>
+        <option value="0">No</option>
+      </select>
+      <div class="invalid-feedback">
+        Please select a valid state.
+      </div>
+    </div>
+    <div class="col-md-4">
+      <label for="product-price" class="form-label">Product Price</label>
+      <input type="text" class="form-control" id="product-price" aria-describedby="product-priceFeedback" name="product_price" [(ngModel)]="productDetails.price" ngModel>
+      <div id="product-priceFeedback" class="invalid-feedback">
+        Please provide a valid city.
+      </div>
+    </div>
+    <div class="col-md-4">
+      <label for="reviews" class="form-label">Reviews</label>
+      <select class="form-select" name="product-reviews" id="reviews" name="product_reviews" [(ngModel)]="productDetails.reviews" ngModel>
+        <option selected disabled value="">Choose...</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+      <div class="invalid-feedback">
+        Please select a valid state.
+      </div>
+    </div>
+    <div class="col-12">
+      <button class="btn btn-primary" type="submit">Submit form</button>
+    </div>
+  </form>

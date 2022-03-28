@@ -1,0 +1,5 @@
+<div class="sidebar list-group">
+    <a href="products" class="list-group-item">View All Products </a>
+    <a href="products/add-product" class="list-group-item">Add Product</a>
+    <a href="products/search-category/{{catg.id}}" class="list-group-item" *ngFor="let catg of categoryList">{{catg.categoryName}}</a>
+</div>
